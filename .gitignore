@@ -1,0 +1,30 @@
+                # Node
+                node_modules/
+                dist/
+                build/
+                .env
+
+                # React
+                client/node_modules/
+                client/build/
+                client/.env
+
+                # Python
+                __pycache__/
+                *.pyc
+                .venv/
+
+                # System
+                .DS_Store
+                Thumbs.db
+
+                # IDEs
+                .vscode/
+                .idea/
+
+                # Logs
+                *.log
+
+                # Issue importer
+                issues.json
+                import_issues.py
