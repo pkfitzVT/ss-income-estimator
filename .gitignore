@@ -3,7 +3,8 @@
                 dist/
                 build/
                 .env
-
+                .eslintrc.json
+                .prettierrc
                 # React
                 client/node_modules/
                 client/build/
