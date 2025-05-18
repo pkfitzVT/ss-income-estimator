@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ec69d86-bd44-4c12-9a7c-67b1e56f6026" name="Changes" comment="added directories and linting features">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/SalaryForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +52,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/issue-4-github-actions",
+    "git-widget-placeholder": "feature/build-input-form",
     "last_opened_file_path": "C:/Users/pkeen/WebstormProjects/ss-income-estimator",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -151,6 +160,7 @@
     <MESSAGE value="added README.md" />
     <MESSAGE value="added directory, linting files" />
     <MESSAGE value="added directories and linting features" />
-    <option name="LAST_COMMIT_MESSAGE" value="added directories and linting features" />
+    <MESSAGE value="added testing directory and files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added testing directory and files" />
   </component>
 </project>

@@ -1,11 +1,10 @@
 {
   "extends": [
     "react-app",
-    "plugin:react/recommended",
+    "react-app/jest",
     "prettier"
   ],
   "rules": {
-    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off"
   }
 }
