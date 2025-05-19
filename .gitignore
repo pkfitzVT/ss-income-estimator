@@ -1,31 +1,33 @@
-                # Node
-                node_modules/
-                dist/
-                build/
-                .env
-                .eslintrc.json
-                .prettierrc
-                # React
-                client/node_modules/
-                client/build/
-                client/.env
+# Node
+node_modules/
+server/node_modules/
+client/node_modules/
+dist/
+build/
+.env
+.eslintrc.json
+.prettierrc
 
-                # Python
-                __pycache__/
-                *.pyc
-                .venv/
+# React
+client/build/
+client/.env
 
-                # System
-                .DS_Store
-                Thumbs.db
+# Python
+__pycache__/
+*.pyc
+.venv/
 
-                # IDEs
-                .vscode/
-                .idea/
+# System
+.DS_Store
+Thumbs.db
 
-                # Logs
-                *.log
+# IDEs
+.vscode/
+.idea/
 
-                # Issue importer
-                issues.json
-                import_issues.py
+# Logs
+*.log
+
+# Issue importer
+issues.json
+import_issues.py
