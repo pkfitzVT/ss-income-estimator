@@ -37,6 +37,8 @@ function SalaryForm({ onCalculate }) {
             </div>
             <button type="submit">Estimate</button>
         </form>
+
+
     );
 }
 

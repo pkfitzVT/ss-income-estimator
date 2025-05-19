@@ -27,6 +27,8 @@ function App() {
         }
         return result;
     };
+    const [aime, setAime] = useState(null);
+    const [pia, setPia] = useState(null);
 
     // 🔁 Called once when the app loads to fetch historical earnings from your API
     useEffect(() => {
@@ -60,9 +62,10 @@ function App() {
         console.log("📊 Top 35 earnings:", sorted);
 
         // ✅ Calculate Social Security benefit
-        const { aime, pia } = calculateSocialSecurityBenefit(sorted);
-        console.log("📈 AIME:", aime);
-        console.log("💰 Estimated Monthly PIA Benefit:", pia);
+        const result = calculateSocialSecurityBenefit(sorted);
+        setAime(result.aime);
+        setPia(result.pia);
+
     }, [startingSalary, annualRaise, historicWages]);
 
     // 📬 Handler passed to SalaryForm to receive new values
@@ -84,6 +87,15 @@ function App() {
                 <h1>Social Security Income Estimator</h1>
                 <SalaryForm onCalculate={handleEstimate} />
             </div>
+            {pia !== null && (
+                <div style={{ marginTop: '2rem', padding: '1rem', border: '1px solid #ccc', borderRadius: '8px' }}>
+                    <h2>Estimated Monthly Benefit</h2>
+                    <p><strong>AIME:</strong> ${aime.toLocaleString()}</p>
+                    <p><strong>PIA:</strong> ${pia.toLocaleString()}</p>
+                </div>
+            )}
+
+
         </div>
     );
 }
