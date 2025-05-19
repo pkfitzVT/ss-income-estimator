@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 
 function SalaryForm({ onCalculate }) {
-    const [startingSalary, setStartingSalary] = useState('');
-    const [annualRaise, setAnnualRaise] = useState('');
+    const [startingSalary, setStartingSalary] = useState(60000);
+    const [annualRaise, setAnnualRaise] = useState(2.5);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        const salary = parseFloat(startingSalary);
-        const raise = parseFloat(annualRaise);
-
-        if (isNaN(salary) || isNaN(raise)) {
-            alert('Please enter valid numeric values.');
-            return;
-        }
-
-        onCalculate({ salary, raise });
+        console.log("Submitting with:", startingSalary, annualRaise); // ✅ debug
+        onCalculate({
+            salary: parseFloat(startingSalary),
+            raise: parseFloat(annualRaise),
+        });
     };
 
     return (
