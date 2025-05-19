@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SalaryForm from './components/SalaryForm';
 import TopEarningsTable from './components/TopEarningsTable';
+import { calculateSocialSecurityBenefit } from './utils/ssCalculator';
 
 function App() {
     // 🧠 State to store user input values from the form
@@ -12,25 +13,6 @@ function App() {
 
     // 🔝 State to store the top 35 combined earnings
     const [top35, setTop35] = useState([]);
-
-    // 🔁 Called once when the app loads to fetch historical earnings from your API
-    useEffect(() => {
-        const currentYear = new Date().getFullYear();
-        const projections = projectWages(currentYear, startingSalary, annualRaise);
-
-        const combined = [...historicWages, ...projections];
-
-        const sorted = combined
-            .filter((e) => e.earnings > 0)
-            .sort((a, b) => b.earnings - a.earnings)
-            .slice(0, 35);
-
-        // ✅ INSERT THIS HERE:
-        console.log("📊 Top 35 earnings:", sorted);
-
-        setTop35(sorted);
-    }, [startingSalary, annualRaise, historicWages]);
-
 
     // 📈 Function to project wages over the next 15 years
     const projectWages = (startYear, baseSalary, growthRate, years = 15) => {
@@ -46,7 +28,7 @@ function App() {
         return result;
     };
 
-    // 🔁 Whenever form values or historical data changes, recompute the top 35 earnings
+    // 🔁 Called once when the app loads to fetch historical earnings from your API
     useEffect(() => {
         fetch("http://localhost:3001/api/wages/top35")
             .then((res) => res.json())
@@ -63,7 +45,25 @@ function App() {
             });
     }, []);
 
+    // 🔁 Recompute the top 35 earnings whenever form or historical data changes
+    useEffect(() => {
+        const currentYear = new Date().getFullYear();
+        const projections = projectWages(currentYear, startingSalary, annualRaise);
+        const combined = [...historicWages, ...projections];
 
+        const sorted = combined
+            .filter((e) => e.earnings > 0)
+            .sort((a, b) => b.earnings - a.earnings)
+            .slice(0, 35);
+
+        setTop35(sorted);
+        console.log("📊 Top 35 earnings:", sorted);
+
+        // ✅ Calculate Social Security benefit
+        const { aime, pia } = calculateSocialSecurityBenefit(sorted);
+        console.log("📈 AIME:", aime);
+        console.log("💰 Estimated Monthly PIA Benefit:", pia);
+    }, [startingSalary, annualRaise, historicWages]);
 
     // 📬 Handler passed to SalaryForm to receive new values
     const handleEstimate = ({ salary, raise }) => {
